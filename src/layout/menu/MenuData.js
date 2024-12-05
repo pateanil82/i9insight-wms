@@ -9,6 +9,21 @@ const menu = [
     text: "Report",
     link: "/report",
   },
+  {
+    icon: "truck",
+    text: "Transaction",
+    active: false,
+    subMenu: [
+      {
+        text: "Inward",
+        link: "/transactions/inward",
+      },
+      {
+        text: "Outward",
+        link: "/transactions/outward",
+      },
+    ],
+  },
   // {
   //   icon: "bitcoin-cash",
   //   text: "Crypto Dashboard",

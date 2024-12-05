@@ -19,6 +19,9 @@ import Layout from "../layout/Index";
 import LayoutNoSidebar from "../layout/Index-nosidebar";
 import AppProvider from "../context/appContext";
 
+import Inward from "../pages/transactions/Inward";
+import Outward from "../pages/transactions/Outward";
+
 const Router = () => {
   const location = useLocation();
 
@@ -26,7 +29,7 @@ const Router = () => {
     window.scrollTo(0, 0);
   }, [location]);
 
-  // const isAuthenticated = !!localStorage.getItem("accessToken");
+  const isAuthenticated = !!localStorage.getItem("accessToken");
 
   return (
     <>
@@ -34,23 +37,25 @@ const Router = () => {
         <Route
           path={`${process.env.PUBLIC_URL}`}
           element={
-            // isAuthenticated ? (
-            <AppProvider>
-              <Layout />
-            </AppProvider>
-            // ) : (
-            //   <Navigate to="/login" />
-            // )
+            isAuthenticated ? (
+              <AppProvider>
+                <Layout />
+              </AppProvider>
+            ) : (
+              <Navigate to="/login" />
+            )
           }
         >
           <Route index element={<Homepage />}></Route>
+          <Route path="/transactions/inward" element={<Inward />} />
+          <Route path="/transactions/outward" element={<Outward />} />
         </Route>
         <Route path={`${process.env.PUBLIC_URL}`} element={<LayoutNoSidebar />}>
           <Route path="auth-success" element={<Success />}></Route>
           <Route path="reset" element={<ForgotPassword />}></Route>
           <Route path="register" element={<Register />}></Route>
-          <Route path="login" element={<Login />}></Route>
-          {/* <Route path="login" element={!isAuthenticated ? <Login /> : <Navigate to="/" />}></Route> */}
+          {/* <Route path="login" element={<Login />}></Route> */}
+          <Route path="login" element={!isAuthenticated ? <Login /> : <Navigate to="/" />}></Route>
 
           <Route path="errors">
             <Route path="404-modern" element={<Error404Modern />}></Route>
