@@ -7,7 +7,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 
 export const PreviewCard = ({ className, bodyClass, ...props }) => {
   return (
-    <Card className={`card-preview ${className ? className : ""}`}>
+    <Card className={`card-preview ${className ? className : ""}`} {...props}>
       <div className={`card-inner ${bodyClass ? bodyClass : ""}`}>{props.children}</div>
     </Card>
   );
@@ -15,7 +15,7 @@ export const PreviewCard = ({ className, bodyClass, ...props }) => {
 
 export const PreviewAltCard = ({ className, bodyClass, ...props }) => {
   return (
-    <Card className={`card-bordered ${className ? className : ""}`}>
+    <Card className={`card-bordered ${className ? className : ""}`} {...props}>
       <div className={`card-inner ${bodyClass ? bodyClass : ""}`}>{props.children}</div>
     </Card>
   );

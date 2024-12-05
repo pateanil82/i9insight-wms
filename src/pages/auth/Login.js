@@ -41,7 +41,7 @@ const Login = () => {
       const response = await token(data);
       if (response.statusCode === 200) {
         const responseLogin = await login();
-        setUserName(responseLogin.data)
+        setUserName(responseLogin.data);
         navigate("/");
       }
     } catch (error) {
@@ -81,9 +81,6 @@ const Login = () => {
           <BlockHead>
             <BlockContent>
               <BlockTitle tag="h4">Sign-In</BlockTitle>
-              {/* <BlockDes>
-                <p>Access Dashlite using your email and passcode.</p>
-              </BlockDes> */}
             </BlockContent>
           </BlockHead>
           {errorVal && (
@@ -151,38 +148,6 @@ const Login = () => {
               </Button>
             </div>
           </Form>
-          {/* <div className="form-note-s2 text-center pt-4">
-            New on our platform? <Link to={`${process.env.PUBLIC_URL}/register`}>Create an account</Link>
-          </div> */}
-          {/* <div className="text-center pt-4 pb-3">
-            <h6 className="overline-title overline-title-sap">
-              <span>OR</span>
-            </h6>
-          </div> */}
-          {/* <ul className="nav justify-center gx-4">
-            <li className="nav-item">
-              <a
-                className="nav-link"
-                href="#socials"
-                onClick={(ev) => {
-                  ev.preventDefault();
-                }}
-              >
-                Facebook
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link"
-                href="#socials"
-                onClick={(ev) => {
-                  ev.preventDefault();
-                }}
-              >
-                Google
-              </a>
-            </li>
-          </ul> */}
         </PreviewCard>
       </Block>
       {/* <AuthFooter /> */}

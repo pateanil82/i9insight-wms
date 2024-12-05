@@ -1,0 +1,14 @@
+.custom-container {
+  height: calc(100% - 20px);
+  .custom-house {
+    padding: 15px;
+  }
+}
+
+.custom-divider {
+  border-bottom: 1px solid #dbdfea;
+  margin: 20px 0;
+}
+.cursor-pointer {
+  cursor: pointer;
+}

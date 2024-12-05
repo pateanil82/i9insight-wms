@@ -137,17 +137,12 @@ const MenuItem = ({ icon, link, text, sub, newTab, sidebarToggle, mobileView, ba
   const menuItemClass = classNames({
     "nk-menu-item": true,
     "has-sub": sub,
-    "active current-page": currentUrl === process.env.PUBLIC_URL + link,
+    "active current-page": link === "/" ? currentUrl === link : currentUrl.includes(link),
   });
   return (
     <li className={menuItemClass} onClick={(e) => toggleActionSidebar(e)}>
       {newTab ? (
-        <Link
-          to={`${process.env.PUBLIC_URL + link}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="nk-menu-link"
-        >
+        <Link to={`${link}`} target="_blank" rel="noopener noreferrer" className="nk-menu-link">
           {icon ? (
             <span className="nk-menu-icon">
               <Icon name={icon} />
@@ -157,7 +152,7 @@ const MenuItem = ({ icon, link, text, sub, newTab, sidebarToggle, mobileView, ba
         </Link>
       ) : (
         <NavLink
-          to={`${process.env.PUBLIC_URL + link}`}
+          to={`${link}`}
           className={`nk-menu-link${sub ? " nk-menu-toggle" : ""}`}
           onClick={sub ? menuToggle : null}
         >

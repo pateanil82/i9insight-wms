@@ -26,7 +26,7 @@ const User = () => {
           <UserAvatar icon="user-alt" className="sm" />
           <div className="user-info d-none d-md-block">
             <div className="user-status">Administrator</div>
-            <div className="user-name dropdown-indicator">{getUserName()}</div>
+            <div className="user-name dropdown-indicator">{getUserName() || "I9-Insights"}</div>
           </div>
         </div>
       </DropdownToggle>
@@ -37,7 +37,7 @@ const User = () => {
               <span>AB</span>
             </div>
             <div className="user-info">
-              <span className="lead-text">{getUserName()}</span>
+              <span className="lead-text">{getUserName() || "I9-Insights"}</span>
               {/* <span className="sub-text">info@softnio.com</span> */}
             </div>
           </div>

@@ -304,22 +304,11 @@ export const HorizontalBarChart = ({ state }) => {
 };
 
 export const StackedBarChart = ({ state }) => {
-  const [data, setData] = useState(userActivity);
-  useEffect(() => {
-    let object;
-    if (state === "day") {
-      object = userActivitySet2;
-    } else if (state === "month") {
-      object = userActivitySet3;
-    } else {
-      object = userActivitySet4;
-    }
-    setData(object);
-  }, [state]);
+
   return (
     <Bar
       className="usera-activity-chart"
-      data={data}
+      data={userActivitySet4}
       options={{
         plugins: {
           legend: {
@@ -346,14 +335,14 @@ export const StackedBarChart = ({ state }) => {
         maintainAspectRatio: false,
         scales: {
           y: {
-              display: false,
+              // display: false,
               stacked: true,
               ticks: {
                 beginAtZero: true,
               },
           },
           x: {
-              display: false,
+              // display: false,
               stacked: true,
           },
         },

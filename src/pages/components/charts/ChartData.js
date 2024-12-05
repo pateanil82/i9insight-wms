@@ -7,7 +7,7 @@ export const solidLineChart = {
   barPercentage: 0.6,
   datasets: [
     {
-      label: "Total Received",
+      label: "Outward Trend",
       borderColor: "#5ce0aa",
       backgroundColor: "white",
       pointBorderWidth: 2,
@@ -17,7 +17,7 @@ export const solidLineChart = {
       data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95],
     },
     {
-      label: "Total Send",
+      label: "Inward Trend",
       backgroundColor: "white",
       pointBorderWidth: 2,
       borderColor: "#0069FF",

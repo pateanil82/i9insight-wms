@@ -39,7 +39,6 @@ import TrafficDougnut from "../components/partials/analytics/traffic-dougnut/Tra
 import ActiveUser from "../components/partials/analytics/active-user/ActiveUser";
 
 const Homepage = () => {
-  const [sm, updateSm] = useState(false);
   return (
     <>
       <Head title="Homepage"></Head>
@@ -54,148 +53,40 @@ const Homepage = () => {
                 <p>Welcome to DashLite Dashboard Template</p>
               </BlockDes> */}
             </BlockHeadContent>
-            <BlockHeadContent>
-              <div className="toggle-wrap nk-block-tools-toggle">
-                <Button
-                  className={`btn-icon btn-trigger toggle-expand me-n1 ${sm ? "active" : ""}`}
-                  onClick={() => updateSm(!sm)}
-                >
-                  <Icon name="more-v" />
-                </Button>
-                <div className="toggle-expand-content" style={{ display: sm ? "block" : "none" }}>
-                  <ul className="nk-block-tools g-3">
-                    {/* <li>
-                      <UncontrolledDropdown>
-                        <DropdownToggle tag="a" className="dropdown-toggle btn btn-white btn-dim btn-outline-light">
-                          <Icon className="d-none d-sm-inline" name="calender-date" />
-                          <span>
-                            <span className="d-none d-md-inline">Last</span> 30 Days
-                          </span>
-                          <Icon className="dd-indc" name="chevron-right" />
-                        </DropdownToggle>
-                        <DropdownMenu>
-                          <ul className="link-list-opt no-bdr">
-                            <li>
-                              <DropdownItem
-                                tag="a"
-                                onClick={(ev) => {
-                                  ev.preventDefault();
-                                }}
-                                href="#!"
-                              >
-                                <span>Last 30 days</span>
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem
-                                tag="a"
-                                onClick={(ev) => {
-                                  ev.preventDefault();
-                                }}
-                                href="#dropdownitem"
-                              >
-                                <span>Last 6 months</span>
-                              </DropdownItem>
-                            </li>
-                            <li>
-                              <DropdownItem
-                                tag="a"
-                                onClick={(ev) => {
-                                  ev.preventDefault();
-                                }}
-                                href="#dropdownitem"
-                              >
-                                <span>Last 3 weeks</span>
-                              </DropdownItem>
-                            </li>
-                          </ul>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </li> */}
-                    {/* <li className="nk-block-tools-opt">
-                      <Button color="primary">
-                        <Icon name="reports" />
-                        <span>Reports</span>
-                      </Button>
-                    </li> */}
-                  </ul>
-                </div>
-              </div>
-            </BlockHeadContent>
           </BlockBetween>
         </BlockHead>
         <Block>
           <Row className="g-gs">
-            <Col md="6" xxl="4">
-              <PreviewAltCard className="h-100">
-                <h6 className="title">Sales Overview</h6>
-                <p>In 30 days sales of product subscription.</p>  
-                <SalesOverview />
-              </PreviewAltCard>
-            </Col>
-            <Col md="6" xxl="4">
+            <Col md="6" xxl="6">
               <PreviewCard className="h-100">
-                <h6 className="title">Orders Overview</h6>
-                <p>In last days buy and sells overview.</p>
-                <OrderOverview />
+                <h6 className="title">Warehouse Capacity utilization</h6>
+                {/* <p>How do your users visited in the time.</p> */}
+                <ActiveUser />
               </PreviewCard>
             </Col>
-            <Col md="6" xxl="4">
+            <Col md="6" xxl="6">
               <PreviewCard className="h-100">
-                <h6 className="title">User Activities</h6>
+                <h6 className="title">Shelf life wise stock </h6>
                 <p> Data of last 15 days is shown in given graph.</p>
                 <UserActivity />
               </PreviewCard>
             </Col>
-            <Col md="6" xxl="4">
+            <Col md="12" xxl="6">
               <PreviewCard className="h-100">
-                <h6 className="title">Traffic Channel</h6>
-                <p>In last 15 days buy and sells overview.</p>
-                <TrafficDougnut />
+                <h6 className="title">Top-10 High Outward</h6>
+                <p>In last days buy and sells overview.</p>
+                <OrderOverview />
               </PreviewCard>
             </Col>
-            <Col md="6" xxl="4">
-              <PreviewCard className="h-100">
+            <Col md="12" xxl="6">
+              <PreviewCard className="h-100" style={{ minHeight: "370px" }}>
                 <div style={{ height: "250px" }}>
-                  <h6 className="title">Trend Intersection</h6>
+                  <h6 className="title">Outward/ Inward Trend</h6>
                   <p>A chart highlight relation between two values.</p>
                   <LineChartExample legend={true} data={solidLineChart} />
                 </div>
               </PreviewCard>
             </Col>
-            <Col md="6"  xxl="4">
-              <PreviewCard className="h-100">
-                <h6 className="title">Active Users</h6>
-                <p>How do your users visited in the time.</p>
-                <ActiveUser />
-              </PreviewCard>
-            </Col>
-            <Col>
-              <Card className="card-bordered card-full w-100">
-                {/* <TransactionTable /> */}
-                <TransListBasic />
-              </Card>
-            </Col>
-            <Col xxl="4" md="6">
-              {/* <Card className="card-bordered card-full">
-                <RecentActivity />
-              </Card> */}
-            </Col>
-            {/* <Col xxl="4" md="6">
-              <Card className="card-bordered card-full">
-                <NewsUsers />
-              </Card>
-            </Col> */}
-            {/* <Col lg="6" xxl="4">
-              <Card className="card-bordered h-100">
-                <Support />
-              </Card>
-            </Col> */}
-            {/* <Col lg="6" xxl="4">
-              <Card className="card-bordered h-100">
-                <Notifications />
-              </Card>
-            </Col> */}
           </Row>
         </Block>
       </Content>

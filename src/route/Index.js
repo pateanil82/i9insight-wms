@@ -18,6 +18,10 @@ import Success from "../pages/auth/Success";
 import Layout from "../layout/Index";
 import LayoutNoSidebar from "../layout/Index-nosidebar";
 import AppProvider from "../context/appContext";
+import Warehouse from "../pages/warehouse";
+import WarehouseProvider from "../pages/warehouse/WarehouseContext";
+import WarehouseCapacity from "../pages/warehouse/WarehouseCapacity";
+import WarehouseTable from "../pages/warehouse/WarehouseTable";
 
 const Router = () => {
   const location = useLocation();
@@ -26,7 +30,7 @@ const Router = () => {
     window.scrollTo(0, 0);
   }, [location]);
 
-  // const isAuthenticated = !!localStorage.getItem("accessToken");
+  const isAuthenticated = !!localStorage.getItem("accessToken");
 
   return (
     <>
@@ -34,23 +38,27 @@ const Router = () => {
         <Route
           path={`${process.env.PUBLIC_URL}`}
           element={
-            // isAuthenticated ? (
-            <AppProvider>
-              <Layout />
-            </AppProvider>
-            // ) : (
-            //   <Navigate to="/login" />
-            // )
+            isAuthenticated ? (
+              <AppProvider>
+                <Layout />
+              </AppProvider>
+            ) : (
+              <Navigate to="/login" />
+            )
           }
         >
           <Route index element={<Homepage />}></Route>
+          <Route element={<WarehouseProvider />}>
+            <Route path="warehouse" element={<Warehouse />}></Route>
+            <Route path="warehouse/capacity" element={<WarehouseCapacity />}></Route>
+            <Route path="warehouse/capacity/data" element={<WarehouseTable />}></Route>
+          </Route>
         </Route>
         <Route path={`${process.env.PUBLIC_URL}`} element={<LayoutNoSidebar />}>
           <Route path="auth-success" element={<Success />}></Route>
           <Route path="reset" element={<ForgotPassword />}></Route>
           <Route path="register" element={<Register />}></Route>
-          <Route path="login" element={<Login />}></Route>
-          {/* <Route path="login" element={!isAuthenticated ? <Login /> : <Navigate to="/" />}></Route> */}
+          <Route path="login" element={!isAuthenticated ? <Login /> : <Navigate to="/" />}></Route>
 
           <Route path="errors">
             <Route path="404-modern" element={<Error404Modern />}></Route>
