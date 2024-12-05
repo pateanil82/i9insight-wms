@@ -193,7 +193,7 @@ export const DoubleBar = ({ state }) => {
                 },
                 padding: 10,
                 callback: function (value, index, values) {
-                  return "$ " + value;
+                  return "₹ " + value;
                 },
                 min: 100,
                 max: 5000,

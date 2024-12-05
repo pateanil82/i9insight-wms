@@ -39,19 +39,20 @@ const WarehouseCapacity = () => {
                 </Col>
                 <Col md="10">
                   <Row>
-                    {item.children.map((childItem) => (
+                    {item.children.map((childItem, index) => (
                       <Col
                         md="3"
                         onClick={() => {
-                          navigate("/warehouse/capacity/data", {
-                            state: {
-                              warehouse: item.name,
-                              cartonsName: childItem.name,
-                              cartonsCount: childItem.description,
-                            },
-                          });
+                          (index === 0 || index === 1) &&
+                            navigate("/warehouse/capacity/data", {
+                              state: {
+                                warehouse: item.name,
+                                cartonsName: childItem.name,
+                                cartonsCount: childItem.description,
+                              },
+                            });
                         }}
-                        className="cursor-pointer"
+                        className={(index === 0 || index === 1) && "cursor-pointer"}
                       >
                         <PreviewAltCard bodyClass="p-0">
                           <Card
@@ -65,7 +66,7 @@ const WarehouseCapacity = () => {
                                   : " #dc3545",
                             }}
                           >
-                            <CardHeader>{childItem.name}</CardHeader>
+                            <CardHeader className="warehouse-card-header">{childItem.name}</CardHeader>
                             <CardBody>
                               <CardText>No of Cartons: {childItem.description}</CardText>
                             </CardBody>

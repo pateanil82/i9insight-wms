@@ -28,7 +28,7 @@ const WarehouseContainer = () => {
         <Row className="g-gs">
           {warehouseData?.map((item, index) => (
             <Col sm="6" lg="4" xxl="3">
-              <div style={{ cursor: "pointer" }} onClick={() => onHandleWarehouseClick()}>
+              <div style={{ cursor: index === 0 && "pointer" }} onClick={() => index === 0 && onHandleWarehouseClick()}>
                 <Card
                   style={{
                     background: index === 0 ? "#1a78ff" : index === 1 ? "#f2426e" : "#198754",

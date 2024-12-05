@@ -492,7 +492,7 @@ export const userActivitySet3 = {
 };
 
 export const userActivitySet4 = {
-  labels: ["Warehouse 1", "Warehouse 2", "Warehouse 3", "Warehouse 4", "Warehouse 5", "Warehouse 6"],
+  labels: ["Bangalore", "Mumbai", "Chennai"],
   dataUnit: "USD",
   stacked: true,
   datasets: [
@@ -500,7 +500,7 @@ export const userActivitySet4 = {
       label: "Direct Join",
       color: "red",
       backgroundColor: "red",
-      data: [110, 80, 125, 55, 95, 75],
+      data: [10, 10, 60],
       categoryPercentage: 0.7,
       barPercentage: 0.7,
     },
@@ -508,7 +508,7 @@ export const userActivitySet4 = {
       label: "Referral Join",
       color: "orange",
       backgroundColor: "orange",
-      data: [125, 55, 95, 75, 90, 110],
+      data: [20, 50, 20],
       categoryPercentage: 0.7,
       barPercentage: 0.7,
     },
@@ -516,7 +516,7 @@ export const userActivitySet4 = {
       label: "Referral Join",
       color: "green",
       backgroundColor: "green",
-      data: [75, 90, 110, 80, 125, 55],
+      data: [30, 35, 10],
       categoryPercentage: 0.7,
       barPercentage: 0.7,
     },

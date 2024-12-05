@@ -6,7 +6,6 @@ import { Row, Col } from "../../../grid/Grid";
 import { Link } from "react-router-dom";
 
 const OrderOverview = () => {
-  const [orderOverview, setOverview] = useState("");
   return (
     <React.Fragment>
       <div className="card-title-group align-start mb-3"></div>
@@ -14,7 +13,7 @@ const OrderOverview = () => {
         <Row className="g-4 align-end">
           <Col xxl="12">
             <div className="nk-order-ovwg-ck" style={{ height: "300px" }}>
-              <DoubleBar state={orderOverview} />
+              <DoubleBar />
             </div>
           </Col>
         </Row>

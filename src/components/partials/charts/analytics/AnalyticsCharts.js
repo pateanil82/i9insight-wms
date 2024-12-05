@@ -145,7 +145,7 @@ export const ActiveUserBarChart = () => {
                 size: "12px",
               },
               padding: 0,
-              stepSize: 50,
+              stepSize: 10,
             },
             grid: {
               color: "rgba(82, 100, 132, 0.2)",

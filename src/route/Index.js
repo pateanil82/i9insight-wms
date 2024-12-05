@@ -23,6 +23,9 @@ import WarehouseProvider from "../pages/warehouse/WarehouseContext";
 import WarehouseCapacity from "../pages/warehouse/WarehouseCapacity";
 import WarehouseTable from "../pages/warehouse/WarehouseTable";
 
+import Inward from "../pages/transactions/Inward";
+import Outward from "../pages/transactions/Outward";
+
 const Router = () => {
   const location = useLocation();
 
@@ -53,6 +56,10 @@ const Router = () => {
             <Route path="warehouse/capacity" element={<WarehouseCapacity />}></Route>
             <Route path="warehouse/capacity/data" element={<WarehouseTable />}></Route>
           </Route>
+          <Route path="/transactions" element={<Navigate to="/transactions/inward" />} />
+          <Route path="/transactions/inward" element={<Inward />} />
+          <Route path="/transactions/pick-list" element={<Outward />} />
+          <Route path="/report" element={<></>} />
         </Route>
         <Route path={`${process.env.PUBLIC_URL}`} element={<LayoutNoSidebar />}>
           <Route path="auth-success" element={<Success />}></Route>

@@ -16,13 +16,18 @@ const menu = [
     subMenu: [
       {
         text: "Inward",
-        link: "/transaction/inward",
+        link: "/transactions/inward",
       },
       {
-        text: "Outward",
-        link: "/transaction/outward",
+        text: "Pick list",
+        link: "/transactions/pick-list",
       },
     ],
+  },
+  {
+    icon: "report",
+    text: "Report",
+    link: "/report",
   },
 ];
 export default menu;
